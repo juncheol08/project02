@@ -9,10 +9,8 @@ public class Custom {
     private String tel;
     private String email;
     private String birth;
+    private String addr;
     private String regdate;
-
-//    public Custom() {
-//    }
 
     public String getId() {
         return id;
@@ -86,6 +84,14 @@ public class Custom {
         this.regdate = regdate;
     }
 
+    public String getAddr() {
+        return addr;
+    }
+
+    public void setAddr(String addr) {
+        this.addr = addr;
+    }
+
     @Override
     public String toString() {
         return "Custom{" +
@@ -97,6 +103,7 @@ public class Custom {
                 ", tel='" + tel + '\'' +
                 ", email='" + email + '\'' +
                 ", birth='" + birth + '\'' +
+                ", addr='" + addr + '\'' +
                 ", regdate='" + regdate + '\'' +
                 '}';
     }

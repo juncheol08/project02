@@ -6,17 +6,17 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="">CHUNJAE</a>
+                <a class="navbar-brand" href="${path1 }/">CHUNJAE</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="${path1 }/ProList.do" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 상품
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu ">
                                 <li><a class="dropdown-item" href="${path1 }/ProList.do">교과서</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="#">참고서</a></li>
@@ -37,9 +37,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="">ETC</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                        </li>
+
                     </ul>
                     <ul class="nav justify-content-end">
                         <c:if test="${sid eq 'admin'}">
