@@ -27,6 +27,23 @@
         <div class="container">
             <div class="box_wrap">
                 <ul class="list row">
+
+<%--                    <c:forEach var="pro" items="${productList }" varStatus="status">--%>
+<%--                        <li class="col-3">--%>
+<%--                            <div class="card" style="width: 18rem;">--%>
+<%--                                <img src="${pro.imgSrc1}" class="card-img-top" alt="샘플이미지">--%>
+<%--                                <div class="card-body">--%>
+<%--                                    <h5 class="card-title">Card title</h5>--%>
+<%--                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>--%>
+<%--                                    <a href="#" class="btn btn-primary">Go somewhere</a>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </li>--%>
+
+<%--                    </c:forEach>--%>
+
+
+
                     <li class="col-3">
                         <div class="card" style="width: 18rem;">
                             <img src="${path }/img/sample01.png" class="card-img-top" alt="샘플이미지">
@@ -37,66 +54,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="col-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="${path }/img/sample01.png" class="card-img-top" alt="샘플이미지">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="${path }/img/sample01.png" class="card-img-top" alt="샘플이미지">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="${path }/img/sample01.png" class="card-img-top" alt="샘플이미지">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="${path }/img/sample01.png" class="card-img-top" alt="샘플이미지">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="${path }/img/sample01.png" class="card-img-top" alt="샘플이미지">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="${path }/img/sample01.png" class="card-img-top" alt="샘플이미지">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </li>
+
                 </ul>
             </div>
         </div>
