@@ -26,7 +26,6 @@ public class ProductDAO {
             rs = pstmt.executeQuery();
             while(rs.next()){
                 Product pro = new Product();
-
                 pro.setNo(rs.getInt("no"));
                 pro.setCate(rs.getString("cate"));
                 pro.setProno(rs.getString("prono"));

@@ -14,7 +14,7 @@ import java.util.List;
 @WebServlet("/ProList.do")
 public class ProListCtrl extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("msg", "상품 리스트를 출력합니다.");
 
         ProductDAO dao = new ProductDAO();

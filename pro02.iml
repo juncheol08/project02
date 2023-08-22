@@ -29,7 +29,7 @@
     <orderEntry type="library" name="jsoup" level="project" />
     <orderEntry type="library" name="net.markenwerk.utils.json.parser" level="project" />
     <orderEntry type="library" name="json" level="project" />
-    <orderEntry type="library" name="cos" level="project" />
     <orderEntry type="library" name="sun.mail.javax" level="project" />
+    <orderEntry type="library" name="cos" level="project" />
   </component>
 </module>
