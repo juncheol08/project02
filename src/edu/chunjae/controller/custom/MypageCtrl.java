@@ -3,6 +3,7 @@ package edu.chunjae.controller.custom;
 import com.sun.jna.platform.win32.COM.Dispatch;
 import edu.chunjae.dto.Custom;
 import edu.chunjae.model.CustomDAO;
+import edu.chunjae.util.AES256;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
@@ -18,6 +19,7 @@ public class MypageCtrl extends HttpServlet {
 
         CustomDAO dao = new CustomDAO();
         Custom cus = dao.getCustom(id);
+
 
         System.out.println(cus.toString());
 

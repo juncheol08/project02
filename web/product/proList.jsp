@@ -9,7 +9,25 @@
     <title>상품리스트</title>
     <c:set var="path" value="<%=request.getContextPath() %>" />
     <%@ include file="../common.jsp"%>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- datatables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css">
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
 </head>
+<style>
+    .tb1 {
+        width:1000px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .tb1 tr{
+        margin-bottom: 20px;
+    }
+    .tb1 img {
+        width: 250px;
+    }
+</style>
 <body>
 <div class="container-fluid">
     <%@ include file="../header.jsp"%>
@@ -26,36 +44,48 @@
         <h2 class="title">상품 목록</h2>
         <div class="container">
             <div class="box_wrap">
-                <ul class="list row">
-
-<%--                    <c:forEach var="pro" items="${productList }" varStatus="status">--%>
+<%--                <ul class="list row">--%>
+<%--                    <c:forEach var="pro" items="${proList }" varStatus="status">--%>
 <%--                        <li class="col-3">--%>
 <%--                            <div class="card" style="width: 18rem;">--%>
-<%--                                <img src="${pro.imgSrc1}" class="card-img-top" alt="샘플이미지">--%>
+<%--                                <img src="${path }/img/${pro.imgSrc1 }" class="card-img-top" alt="샘플이미지">--%>
 <%--                                <div class="card-body">--%>
-<%--                                    <h5 class="card-title">Card title</h5>--%>
-<%--                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>--%>
-<%--                                    <a href="#" class="btn btn-primary">Go somewhere</a>--%>
+<%--                                    <h5 class="card-title">${pro.pname }</h5>--%>
+<%--                                    <p class="card-text">${pro.pcomment }</p>--%>
+<%--                                    <a href="${path }/Product.do?pno=${pro.pno }" class="btn btn-primary">상세 보기</a>--%>
 <%--                                </div>--%>
 <%--                            </div>--%>
 <%--                        </li>--%>
-
 <%--                    </c:forEach>--%>
+<%--                </ul>--%>
 
+                <table class="tb1" id="myTable">
+                    <thead>
+                    <tr>
+                        <th class="item1" style="text-align: center">번호</th>
+                        <th class="item2" style="text-align: center">이미지</th>
+                        <th class="item3" style="text-align: center">상품명</th>
+                        <th class="item4" style="text-align: center">저자</th>
+                        <th class="item5" style="text-align: center">가격</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach var="pro" items="${proList }" varStatus="status">
+                    <tr>
+                        <td class="item1">${status.count }</td>
+                        <td class="item2">
+                            <a href="${path }/Product.do?pno=${pro.pno }">
+                                <img src="${path }/img/${pro.imgSrc1 }" alt="샘플이미지">
+                            </a>
+                        </td>
+                        <td class="item3">${pro.pname }</td>
+                        <td class="item4">${pro.pauthor }</td>
+                        <td class="item5">${pro.price }</td>
+                    </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
 
-
-                    <li class="col-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="${path }/img/sample01.png" class="card-img-top" alt="샘플이미지">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </li>
-
-                </ul>
             </div>
         </div>
     </div>

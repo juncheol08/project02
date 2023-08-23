@@ -2,9 +2,10 @@ package edu.chunjae.dto;
 
 //상품
 public class Product {
-    private int no;
+    private int pno;
     private String cate;
     private String prono;
+    private String pauthor;
     private String pname;
     private String pcomment;
     private String plist;
@@ -14,12 +15,12 @@ public class Product {
     private String imgSrc3;
     private String resdate;
 
-    public int getNo() {
-        return no;
+    public int getPno() {
+        return pno;
     }
 
-    public void setNo(int no) {
-        this.no = no;
+    public void setPno(int no) {
+        this.pno = no;
     }
 
     public String getCate() {
@@ -36,6 +37,14 @@ public class Product {
 
     public void setProno(String prono) {
         this.prono = prono;
+    }
+
+    public String getPauthor() {
+        return pauthor;
+    }
+
+    public void setPauthor(String pauthor) {
+        this.pauthor = pauthor;
     }
 
     public String getPname() {
@@ -105,9 +114,10 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "no=" + no +
+                "pno=" + pno +
                 ", cate='" + cate + '\'' +
                 ", prono='" + prono + '\'' +
+                ", pauthor='" + pauthor + '\'' +
                 ", pname='" + pname + '\'' +
                 ", pcomment='" + pcomment + '\'' +
                 ", plist='" + plist + '\'' +

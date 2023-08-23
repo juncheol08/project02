@@ -39,7 +39,7 @@ public class CustomDAO {
             rs = pstmt.executeQuery();
             if(rs.next()){
                 cus.setId(rs.getString("id"));
-                cus.setPw(rs.getString("pw"));
+                cus.setPw(AES256.decryptAES256((rs.getString("pw")),"%02x"));
                 cus.setName(rs.getString("name"));
                 cus.setPoint(rs.getInt("point"));
                 cus.setGrade(rs.getString("grade"));
@@ -49,6 +49,20 @@ public class CustomDAO {
                 cus.setRegdate(rs.getString("regdate"));
             }
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (InvalidAlgorithmParameterException e) {
+            throw new RuntimeException(e);
+        } catch (NoSuchPaddingException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalBlockSizeException e) {
+            throw new RuntimeException(e);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        } catch (InvalidKeySpecException e) {
+            throw new RuntimeException(e);
+        } catch (BadPaddingException e) {
+            throw new RuntimeException(e);
+        } catch (InvalidKeyException e) {
             throw new RuntimeException(e);
         } finally {
             con.close(rs, pstmt, conn);

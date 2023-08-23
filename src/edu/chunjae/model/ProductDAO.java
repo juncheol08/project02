@@ -26,9 +26,10 @@ public class ProductDAO {
             rs = pstmt.executeQuery();
             while(rs.next()){
                 Product pro = new Product();
-                pro.setNo(rs.getInt("no"));
+                pro.setPno(rs.getInt("pno"));
                 pro.setCate(rs.getString("cate"));
                 pro.setProno(rs.getString("prono"));
+                pro.setPauthor(rs.getString("pauthor"));
                 pro.setPname(rs.getString("pname"));
                 pro.setPcomment(rs.getString("pcomment"));
                 pro.setPlist(rs.getString("plist"));
@@ -58,14 +59,15 @@ public class ProductDAO {
         }
 
         try {
-            pstmt = conn.prepareStatement(DBConnect.NOTICE_SELECT_ONE);
+            pstmt = conn.prepareStatement(DBConnect.PRODUCT_SELECT_ONE);
             pstmt.setInt(1, no);
             rs = pstmt.executeQuery();
 
             if(rs.next()){
-                pro.setNo(rs.getInt("no"));
+                pro.setPno(rs.getInt("pno"));
                 pro.setCate(rs.getString("cate"));
                 pro.setProno(rs.getString("prono"));
+                pro.setPauthor(rs.getString("pauthor"));
                 pro.setPname(rs.getString("pname"));
                 pro.setPcomment(rs.getString("pcomment"));
                 pro.setPlist(rs.getString("plist"));

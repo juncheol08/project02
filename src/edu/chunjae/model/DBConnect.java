@@ -21,8 +21,8 @@ public interface DBConnect {
     //
     // String DELEVERY_PRO = "update delivery set
 
-    final static String PRODUCT_SELECT_ALL = "select * from product order by no";
-    final static String PRODUCT_SELECT_ONE = "select * from product where id=?";
+    final static String PRODUCT_SELECT_ALL = "select * from product order by pno";
+    final static String PRODUCT_SELECT_ONE = "select * from product where pno=?";
     final static String PRODUCT_INSERT = "insert into product values(default, ?, '', ?, ?, ?, ?, ?, ?, ?, default)";
     final static String PRODUCT_INSERT_UPDATE = "update product set prono = concat(cate, pno) where pno=?";
     final static String PRODUCT_UPDATE = "update product set pname=?, cate=?, pcomment=?, plist=? price=?, imgsrc1=?, imgsrc2=?, imgsrc3=? where pno=?";

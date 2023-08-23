@@ -37,21 +37,35 @@
                         <li class="nav-item">
                             <a class="nav-link" href="">ETC</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="${path1 }/FileUploadTest.do">파일 업로드</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="${path1 }/FileUploadTest2.do">파일 업로드2</a>
+                        </li>
+
 
                     </ul>
                     <ul class="nav justify-content-end">
                         <c:if test="${sid eq 'admin'}">
-                        <li class="nav-item"><a href="${path1 }/AdminNoticeList.do" class="nav-link">Admin Notice</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" aria-disabled="true">${sid }님</a>
+                            </li>
+                            <li class="nav-item"><a href="${path1 }/AdminPage.do" class="nav-link">관리자 페이지</a></li>
+                            <li class="nav-item"><a href="${path1 }/Logout.do" class="nav-link">Logout</a></li>
                         </c:if>
-                        <c:if test="${not empty sid }">
-                            <li class="nav-item"><a href="${path1 }/Login.do" class="nav-link">Login</a></li>
-                            <li class="nav-item"><a href="${path1 }/Join.do" class="nav-link">Join</a></li>
-                            <li class="nav-item"><a href="/Contact.do" class="nav-link">Contact US</a></li>
+                        <c:if test="${not empty sid && sid ne 'admin'}">
+                            <li class="nav-item">
+                                <a class="nav-link disabled" aria-disabled="true">${sid }님</a>
+                            </li>
+                            <li class="nav-item"><a href="${path1 }/Mypage.do?sid=${sid }" class="nav-link">Mypage</a></li>
+                            <li class="nav-item"><a href="${path1 }/Cart.do?sid=${sid }" class="nav-link">Cart</a></li>
+                            <li class="nav-item"><a href="${path1 }/Logout.do" class="nav-link">Logout</a></li>
                         </c:if>
                         <c:if test="${empty sid}">
                             <li class="nav-item"><a href="${path1 }/Login.do" class="nav-link">Login</a></li>
                             <li class="nav-item"><a href="${path1 }/Join.do" class="nav-link">Join</a></li>
-                            <li class="nav-item"><a href="/Contact.do" class="nav-link">Contact US</a></li>
+
                         </c:if>
 
                     </ul>
