@@ -45,6 +45,7 @@ create table delivery (
 	-- constraints  foreign key sno 
 );
 
+-- A:초등교과서 B:초등참고서 C:초등문제집 D:초등기타 ...
 
 create table product (
     pno serial primary key, --상품번호
@@ -74,6 +75,18 @@ create table category(
 	cname varchar(20) not null
 );
 -- drop table category;
+insert into category values('A', '초등교과서');
+insert into category values('B', '초등참고서');
+insert into category values('C', '초등문제집');
+insert into category values('D', '초등기타');
+insert into category values('E', '중등교과서');
+insert into category values('F', '중등참고서');
+insert into category values('G', '중등문제집');
+insert into category values('H', '중등기타');
+insert into category values('I', '고등교과서');
+insert into category values('J', '고등참고서');
+insert into category values('K', '고등문제집');
+insert into category values('L', '고등기타');
 
 create table payment(
 	sno serial primary key,
@@ -133,6 +146,5 @@ select * from custom
 
 
 
-
-
+select * from product;
 

@@ -27,6 +27,11 @@
     .tb1 img {
         width: 250px;
     }
+    .proimg {
+        background-image: url("/img/noimg.png");
+        width : 286px;
+    }
+
 </style>
 <body>
 <div class="container-fluid">
@@ -65,8 +70,8 @@
                         <th class="item1" style="text-align: center">번호</th>
                         <th class="item2" style="text-align: center">이미지</th>
                         <th class="item3" style="text-align: center">상품명</th>
-                        <th class="item4" style="text-align: center">저자</th>
                         <th class="item5" style="text-align: center">가격</th>
+                        <th class="item4" style="text-align: center">저자</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -75,12 +80,12 @@
                         <td class="item1">${status.count }</td>
                         <td class="item2">
                             <a href="${path }/Product.do?pno=${pro.pno }">
-                                <img src="${path }/img/${pro.imgSrc1 }" alt="샘플이미지">
+                                <img src="${path }/img/${pro.imgSrc1 }" alt="샘플이미지" class="proimg">
                             </a>
                         </td>
                         <td class="item3">${pro.pname }</td>
-                        <td class="item4">${pro.pauthor }</td>
                         <td class="item5">${pro.price }</td>
+                        <td class="item4"><a href="${path }/CartCtrl.do"><button type="button" class="btn btn-secondary">장바구니</button></a></td>
                     </tr>
                     </c:forEach>
                     </tbody>

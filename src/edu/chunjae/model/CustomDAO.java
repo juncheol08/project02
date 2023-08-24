@@ -3,13 +3,6 @@ package edu.chunjae.model;
 import edu.chunjae.dto.Custom;
 import edu.chunjae.util.AES256;
 
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -39,7 +32,7 @@ public class CustomDAO {
             rs = pstmt.executeQuery();
             if(rs.next()){
                 cus.setId(rs.getString("id"));
-                cus.setPw(AES256.decryptAES256((rs.getString("pw")),"%02x"));
+                cus.setPw(rs.getString("pw"));
                 cus.setName(rs.getString("name"));
                 cus.setPoint(rs.getInt("point"));
                 cus.setGrade(rs.getString("grade"));
@@ -49,20 +42,6 @@ public class CustomDAO {
                 cus.setRegdate(rs.getString("regdate"));
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (InvalidAlgorithmParameterException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchPaddingException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalBlockSizeException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        } catch (InvalidKeySpecException e) {
-            throw new RuntimeException(e);
-        } catch (BadPaddingException e) {
-            throw new RuntimeException(e);
-        } catch (InvalidKeyException e) {
             throw new RuntimeException(e);
         } finally {
             con.close(rs, pstmt, conn);

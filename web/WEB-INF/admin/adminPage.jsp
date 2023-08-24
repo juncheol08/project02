@@ -29,7 +29,7 @@
             <div class="list-group">
 
                 <a href="#" class="list-group-item list-group-item-action">공지사항 작성</a>
-                <a href="/AddProduct.do" class="list-group-item list-group-item-action">상품 추가</a>
+                <a href="${path }/AddProduct.do" class="list-group-item list-group-item-action">상품 추가</a>
                 <a href="#" class="list-group-item list-group-item-action"></a>
                 <a class="list-group-item list-group-item-action disabled" aria-disabled="true">A disabled link item</a>
             </div>

@@ -1,12 +1,12 @@
 package edu.chunjae.dto;
 
+//출고
 public class Serve {
-    private int sno; //출고번호(auto)
-    private int pno; //출고 제품번호
-    private int amount; //출고수량
-    private int rprice; //출고가격
-    private int resdate; //출고일
-
+    private int sno;        //출고 번호
+    private int pno;        //출고 제품번호
+    private int amount;     //출고량
+    private int sprice;     //출고 가격
+    private String resdate; //출고일
 
     public int getSno() {
         return sno;
@@ -32,19 +32,19 @@ public class Serve {
         this.amount = amount;
     }
 
-    public int getRprice() {
-        return rprice;
+    public int getSprice() {
+        return sprice;
     }
 
-    public void setRprice(int rprice) {
-        this.rprice = rprice;
+    public void setSprice(int sprice) {
+        this.sprice = sprice;
     }
 
-    public int getResdate() {
+    public String getResdate() {
         return resdate;
     }
 
-    public void setResdate(int resdate) {
+    public void setResdate(String resdate) {
         this.resdate = resdate;
     }
 
@@ -54,8 +54,8 @@ public class Serve {
                 "sno=" + sno +
                 ", pno=" + pno +
                 ", amount=" + amount +
-                ", rprice=" + rprice +
-                ", resdate=" + resdate +
+                ", sprice=" + sprice +
+                ", resdate='" + resdate + '\'' +
                 '}';
     }
 }

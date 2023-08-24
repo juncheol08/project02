@@ -48,6 +48,11 @@
                             <td>목차</td>
                             <td>${pro.plist}</td>
                         </tr>
+                        <tr>
+                            <td><a href="${path }/CartCtrl.do"><button type="button" class="btn btn-secondary">장바구니</button></a></td>
+
+                        </tr>
+
                     </table>
                 </div>
             </div>
