@@ -294,4 +294,9 @@ select * from inventory;
 
 SHOW TABLES;
 
-commit
+COMMIT
+
+select * FROM custom;
+
+
+INSERT INTO custom VALUES('test','PiaaQ0NRSE2oqCNJjnWMILh7I0NxM41bVTR9vU1Rp60Jy8aFU0UvVRrHZcSHKa2X3xBYxg==','test',DEFAULT,DEFAULT,'01011112222','123@123.com','2000-01-01',DEFAULT,'주소');

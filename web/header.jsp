@@ -14,22 +14,51 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="${path1 }/ProList.do" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                상품
+                                초등
                             </a>
                             <ul class="dropdown-menu ">
-                                <li><a class="dropdown-item" href="${path1 }/ProList.do">교과서</a></li>
+                                <li><a class="dropdown-item" href="${path1 }/CateProList.do?cate=ABCD">전체</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">참고서</a></li>
-                                <li><a class="dropdown-item" href="#">문제집</a></li>
+                                <li><a class="dropdown-item" href="${path1 }/CateProList.do?cate=A">교과서</a></li>
+                                <li><a class="dropdown-item" href="${path1 }/CateProList.do?cate=B">참고서</a></li>
+                                <li><a class="dropdown-item" href="${path1 }/CateProList.do?cate=C">문제집</a></li>
+                                <li><a class="dropdown-item" href="${path1 }/CateProList.do?cate=D">기타</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="${path1 }/ProList.do" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                중등
+                            </a>
+                            <ul class="dropdown-menu ">
+                                <li><a class="dropdown-item" href="${path1 }/CateProList.do?cate=EFGH">전체</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="${path1 }/CateProList.do?cate=E">교과서</a></li>
+                                <li><a class="dropdown-item" href="${path1 }/CateProList.do?cate=F">참고서</a></li>
+                                <li><a class="dropdown-item" href="${path1 }/CateProList.do?cate=G">문제집</a></li>
+                                <li><a class="dropdown-item" href="${path1 }/CateProList.do?cate=H">기타</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="${path1 }/ProList.do" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                고등
+                            </a>
+                            <ul class="dropdown-menu ">
+                                <li><a class="dropdown-item" href="${path1 }/CateProList.do?cate=IJKL">전체</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="${path1 }/CateProList.do?cate=I">교과서</a></li>
+                                <li><a class="dropdown-item" href="${path1 }/CateProList.do?cate=J">참고서</a></li>
+                                <li><a class="dropdown-item" href="${path1 }/CateProList.do?cate=K">문제집</a></li>
+                                <li><a class="dropdown-item" href="${path1 }/CateProList.do?cate=L">기타</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                커뮤니티
+                                고객센터
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="${path1 }/NoticeList.do">공지사항</a></li>
-                                <li><a class="dropdown-item" href="#">묻고답하기</a></li>
+                                <li><a class="dropdown-item" href="#">FAQ</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="#">학습후기</a></li>
                             </ul>

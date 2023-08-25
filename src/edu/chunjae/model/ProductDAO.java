@@ -299,4 +299,47 @@ public class ProductDAO {
         }
         return cnt;
     }
+
+    public List<Product> getCateProductListSchool(String cate){
+        List<Product> proList = new ArrayList<>();
+        DBConnect con = new PostgreCon();
+
+        String cate1="";
+        String cate2="";
+        String cate3="";
+        String cate4="";
+        if (cate.equals("ABCD")) { cate1="A";cate2="B";cate3="C";cate4="D";}
+        else if(cate.equals("EFGH")){ cate1="E";cate2="F";cate3="G";cate4="H";}
+        else if(cate.equals("IJKL")) { cate1="I";cate2="J";cate3="K";cate4="L";}
+
+        try {
+            conn = con.connect();
+            pstmt = conn.prepareStatement(DBConnect.PRODUCT_SELECT_CATE_SCHOOL);
+            pstmt.setString(1, cate1);
+            pstmt.setString(2, cate2);
+            pstmt.setString(3, cate3);
+            pstmt.setString(4, cate4);
+            rs = pstmt.executeQuery();
+            while(rs.next()){
+                Product pro = new Product();
+                pro.setPno(rs.getInt("pno"));
+                pro.setCate(rs.getString("cate"));
+                pro.setProno(rs.getString("prono"));
+                pro.setPname(rs.getString("pname"));
+                pro.setPcomment(rs.getString("pcomment"));
+                pro.setPlist(rs.getString("plist"));
+                pro.setPrice(rs.getInt("price"));
+                pro.setImgSrc1(rs.getString("imgsrc1"));
+                pro.setImgSrc2(rs.getString("imgsrc2"));
+                pro.setImgSrc3(rs.getString("imgsrc3"));
+                pro.setResdate(rs.getString("resdate"));
+                proList.add(pro);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            con.close(rs, pstmt, conn);
+        }
+        return proList;
+    }
 }

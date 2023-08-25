@@ -20,6 +20,8 @@ public interface DBConnect {
 
     final static String PRODUCT_SELECT_ALL = "select * from product order by pno";
     final static String PRODUCT_SELECT_CATE = "select * from product where cate=? order by pno";
+    final static String PRODUCT_SELECT_CATE_SCHOOL = "SELECT * FROM product WHERE cate IN (?,?,?,?) ORDER BY pno";
+
     final static String PRODUCT_SELECT_ONE = "select * from product where pno=?";
     final static String PRODUCT_SELECT_NEW = "select * from product order by pno desc limit 5";
     final static String PRODUCT_SELECT_BEST = "select * from product where pno in (select pno from payment group by pno order by sum(amount) desc limit 5)";

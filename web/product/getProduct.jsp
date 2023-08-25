@@ -6,9 +6,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상품 상세</title>
+    <title>상품 상세보기</title>
     <c:set var="path" value="<%=request.getContextPath() %>" />
     <%@ include file="../common.jsp"%>
+    <style>
+        th.item1 { width:16%; }
+    </style>
 </head>
 <body>
 <div class="container-fluid">
@@ -18,42 +21,79 @@
             <div class="container">
                 <ol class="breadcrumb justify-content-end">
                     <li class="breadcrumb-item"><a href="${path }">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Product</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">List</li>
-                    <li class="breadcrumb-item active" aria-current="page">상세</li>
+                    <li class="breadcrumb-item"><a href="${path }/ProList.do">Product</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Detail</li>
                 </ol>
             </div>
         </nav>
-        <h2 class="title">상품 상세</h2>
+        <h2 class="title">상품 상세보기</h2>
         <div class="container">
-            <div class="container">
-                <div class="box_wrap text-center">
-                    <table class="mx-auto">
-                        <tr>
-                            <td colspan="2"><img src="${path}/img/${pro.imgSrc1}" class="card-img-top" alt="샘플이미지"></td>
-                        </tr>
-                        <tr>
-                            <td>상품명</td>
-                            <td>${pro.pname}</td>
-                        </tr>
-                        <tr>
-                            <td>상품 가격</td>
-                            <td>${pro.price}</td>
-                        </tr>
-                        <tr>
-                            <td>상품설명</td>
-                            <td>${pro.pcomment}</td>
-                        </tr>
-                        <tr>
-                            <td>목차</td>
-                            <td>${pro.plist}</td>
-                        </tr>
-                        <tr>
-                            <td><a href="${path }/CartCtrl.do"><button type="button" class="btn btn-secondary">장바구니</button></a></td>
-
-                        </tr>
-
-                    </table>
+            <div class="box_wrap">
+                <table class="table table-secondary" id="tb1">
+                    <tbody>
+                    <tr>
+                        <td colspan="2">
+                            <c:if test="${!empty pro.imgSrc1}">
+                                <img src="${path }/storage/${pro.imgSrc1 }" style="max-width:300px;" alt="대표 이미지">
+                            </c:if>
+                            <hr>
+                            <c:if test="${!empty pro.imgSrc3}">
+                                <img src="${path }/storage/${pro.imgSrc3 }" style="max-width:300px;" alt="대표 이미지">
+                            </c:if>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="item1">도서 번호</th>
+                        <td class="item2">${pro.prono }</td>
+                    </tr>
+                    <tr>
+                        <th>도서명</th>
+                        <td>${pro.pname }</td>
+                    </tr>
+                    <tr>
+                        <th>도서 설명</th>
+                        <td>
+                            <pre>${pro.pcomment }</pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>도서 목차</th>
+                        <td><pre>${pro.plist }</pre></td>
+                    </tr>
+                    <tr>
+                        <th>가격</th>
+                        <td>${pro.price }</td>
+                    </tr>
+                    <tr>
+                        <th>남은 수량</th>
+                        <td>
+                            <c:if test="${amount <= 0}">
+                                <span>절판</span>
+                            </c:if>
+                            <c:if test="${amount > 0}">
+                                ${amount }
+                            </c:if>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <c:if test="${!empty pro.imgSrc2}">
+                                <img src="${path }/storage/${pro.imgSrc2 }" style="max-width:300px;" alt="대표 이미지">
+                            </c:if>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="btn-wrap container">
+                    <a href="${path }/ProList.do" class="btn btn-primary">제품 목록</a>
+                    <c:if test="${sid.equals('admin') }">
+                        <a href="${path }/AddReceive.do" class="btn btn-primary">상품 입고</a>
+                        <a href="${path }/UpdateProduct.do?pno=${pro.pno }" class="btn btn-primary">상품 정보 수정</a>
+                    </c:if>
+                    <c:if test="${!empty sid }">
+                        <a href="${path }/AddPayment.do?pno=${pro.pno }" class="btn btn-primary">구매하기</a>
+                        <a href="${path }/AddCart.do?pno=${pro.pno }" class="btn btn-primary">장바구니 담기</a>
+                    </c:if>
                 </div>
             </div>
         </div>
